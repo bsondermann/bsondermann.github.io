@@ -1,15 +1,21 @@
 <html>
 	<head>
+		<title>BLHeli32 to BLHeli-S Music converter</title>
 		<script src="script.js" type="text/javascript"></script>
 	</head>
 	<body>
+		<center>
+			<p style="font-family:Comic Sans MS,Verdana,Helvetica; font-size: 30px">BLHeli32 to BLHeli-S Music converter</p>
+		</center>
 		<input type="text" id="text1" placeholder="BLHeli32 Notes" style = "width:100%"/>
 		<br>
 		<input type="text" id="name" placeholder="Name of the Music"style = "width:100%"/>
 		<br>
-		<input type="text" id="bpm" placeholder="BPM"style = "width:100%"/>
+		<input type="number" id="bpm" placeholder="BPM" style = "width:100%"/>
 		<br>
 		<button onclick="convert()" id="convert">Convert!</button>
+		<br>
+		<p>Output:</p>
 		<br>
 		<p id="converted"></p>
 	</body>
