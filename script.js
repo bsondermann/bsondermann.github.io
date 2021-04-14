@@ -1,11 +1,11 @@
 function convert(){
-	var str = document.getElementById("text1").value;
+	var str = document.getElementById("text1").value.replace(/\s{2,}/g, ' ');;
 	var name = document.getElementById("name").value;
-	var bpm = document.getElementById("bpm").value;
+	var bpm = Math.round(480*(8.0/parseFloat(document.getElementById("interval").value)));
 	if(str == ""||name==""||bpm==""){return;}
 	if(bpm<1){document.getElementById("converted").innerHTML="ERROR: BPM HAS TO BE GREATER THAN 0"; return;}
 	if(/[h-z]/.test(str)){document.getElementById("converted").innerHTML="ERROR: INVALID INPUT"; return;}
-	var converted = name+": d=1,o=1,b="+bpm+": ";
+	var converted = name+": d=2,o=2,b="+bpm+": ";
 	var splited = str.split(" ");
 	for(var i = 0; i<splited.length; i++){
 		var note = splited[i].substring(0,1);
@@ -21,7 +21,9 @@ function convert(){
 			i++;
 			length=splited[i];
 		}else{
-			length = splited[i].substring(1,2);
+			if(splited[i].search("/")!=-1){length=splited[i].substring(splited[i].search("/")+1,splited[i].length);}else{
+				length=splited[i].substring(1,splited[i].length);
+			}
 		}
 		converted += length+note.toLowerCase()+octave+", "
 	}
