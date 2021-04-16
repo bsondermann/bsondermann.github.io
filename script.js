@@ -12,6 +12,9 @@ function convert(){
 	var converted = name+": d=2,o=2,b="+bpm+": ";
 	var splited = str.split(" ");
 	for(var i = 0; i<splited.length; i++){
+		splited[i] = splited[i].replace("1/","");
+	}
+	for(var i = 0; i<splited.length; i++){
 		var note = splited[i].substring(0,1);
 		var octave="";
 		var length = "";
@@ -25,9 +28,8 @@ function convert(){
 			i++;
 			length=splited[i];
 		}else{
-			if(splited[i].search("/")!=-1){length=splited[i].substring(splited[i].search("/")+1,splited[i].length);}else{
-				length=splited[i].substring(1,splited[i].length);
-			}
+			length=splited[i].substring(1,splited[i].length);
+			
 		}
 		converted += length+note.toLowerCase()+octave+", ";
 		if(interval!=0){
