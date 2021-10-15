@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="no-js isBF">
+<head>
+<meta charset="utf-8">
+<title>BlackboxSticksExporter</title>
+
+</head>
+<body style = "background-color:#35363A; font-family: Arial, Helvetica, sans-serif; color:#A8ABB8;">
+	<!--  Welcome Page -->
+  <center id ="center">
+    <div class="welcome-pane">
+        <span class="btn" data-toggle="tooltip" title="Start by opening a log or video file"> Open log file <input type="file" class="file-open"></span>
+        <br>
+        <button class ="btn" onclick="StartRender()">Start</button>
+        <br>
+        <table class = "btn">
+          <tr>
+            <td>Trail Color:</td>
+            <td id="colorpickercell"><td>
+            <td id="colorpickervalue"><td>
+          </tr>
+          <tr>
+            <td>Trail Length:</td>
+            <td id="traillengthcell"><td>
+            <td id="traillengthvalue"><td>
+          </tr>
+          <tr>
+            <td>Framerate:</td>
+            <td><input type="number" id="fpsinput" min="1" max="120" value = "25"><td>
+            <td><td>
+          </tr>
+          <tr>
+            <td>Logs to export:</td>
+            <td><input type="number" id="lognumfrom" min="-1" placeholder="from (-1 for all)"><td>
+            <td><input type="number" id="lognumto" min="0" placeholder="to"><td>
+          </tr>
+        </table>
+        <span id = "info" style ="font-size : 20px;"></span>
+    </div>
+  </center>
+	<!-- Scripts -->
+
+      <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+      <script src="js/jszip.js"></script>
+
+<script src="js/FileSaver.js"></script>
+    <script src="js/vendor/jquery-1.11.3.min.js"></script>
+
+
+
+
+    <script src="js/vendor/jquery.ba-throttle-debounce.js"></script>
+    <script src="js/cache.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/datastream.js"></script>
+    <script src="js/decoders.js"></script>
+    <script src="js/imu.js"></script>
+    <!--<script src="js/craft_2d.js"></script>
+    <script src="js/craft_3d.js"></script>-->
+    <script src="js/flightlog_fielddefs.js"></script>
+    <script src="js/flightlog_fields_presenter.js"></script>
+    <script src="js/flightlog_parser.js"></script>
+    <script src="js/flightlog_index.js"></script>
+    <script src="js/flightlog.js"></script>
+    <!--<script src="js/grapher.js"></script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/complex.js"></script>
+    <script src="js/real.js"></script>
+        <script src="js/pref_storage.js"></script><script src="js/vendor/jquery-1.11.3.min.js"></script>
+        <script src="js/vendor/jquery-ui-1.11.4.min.js"></script>
+    <script src="js/vendor/three.min.js"></script>
+    <script src="js/vendor/jquery.nouislider.all.min.js"></script>
+    <script src="js/vendor/FileSaver.js"></script>
+    <script src="js/vendor/webm-writer-0.1.1.js"></script>
+    <script src="js/vendor/semver.js"></script>
+    <script src="js/expo.js"></script>
+    <script src="js/graph_config.js"></script>
+    <script src="js/graph_legend.js"></script>
+    <script src="js/graph_config_dialog.js"></script>
+    <script src="js/graph_spectrum.js"></script>
+    <script src="js/header_dialog.js"></script>
+    <script src="js/keys_dialog.js"></script>
+    <script src="js/user_settings_dialog.js"></script>
+    <script src="js/seekbar.js"></script>
+    <script src="js/video_export_dialog.js"></script>
+    <script src="js/flightlog_video_renderer.js"></script>
+    <script src="js/graph_config.js"></script>
+
+        <script src="js/configuration.js"></script>
+    <script src="js/graph_config.js"></script>
+    <script src="js/laptimer.js"></script>-->
+
+    <script src="js/main.js"></script>
+</body>
+</html>
